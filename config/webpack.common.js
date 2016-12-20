@@ -56,9 +56,9 @@ module.exports = function (options) {
      */
     entry: {
 
-      'polyfills': './src/polyfills.browser.ts',
-      'vendor':    './src/vendor.browser.ts',
-      'main':      './src/main.browser.ts'
+      'polyfills': './src/polyfills.ts',
+      'vendor':    './src/vendor.ts',
+      'main':      './src/main.ts'
 
     },
 
@@ -124,8 +124,8 @@ module.exports = function (options) {
          *
          */
         {
-          test: /\.css$/,
-          use: ['to-string-loader', 'css-loader']
+          test: /\.scss$/,
+          use: ['to-string-loader', 'css-loader', 'sass-loader']
         },
 
         /* Raw loader support for *.html

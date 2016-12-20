@@ -99,13 +99,13 @@ angular2-webpack-starter/
  │   └──webpack.test.js        * our testing webpack config
  │
  ├──src/                       * our source files that will be compiled to javascript
- |   ├──main.browser.ts        * our entry file for our browser environment
+ |   ├──main.ts        * our entry file for our browser environment
  │   │
  |   ├──index.html             * Index.html: where we generate our index page
  │   │
  |   ├──polyfills.ts           * our polyfills file
  │   │
- |   ├──vendor.browser.ts      * our vendor file
+ |   ├──vendor.ts      * our vendor file
  │   │
  │   ├──app/                   * WebApp: folder
  │   │   ├──app.spec.ts        * a simple test of components in app.ts

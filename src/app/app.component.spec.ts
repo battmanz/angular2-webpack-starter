@@ -1,22 +1,16 @@
-import {
-  inject,
-  TestBed
-} from '@angular/core/testing';
-
-// Load the implementations that should be tested
+import { inject, TestBed } from '@angular/core/testing';
 import { AppComponent } from './app.component';
-import { AppState } from './app.service';
+import { AppState } from './app-state.service';
 
 describe('App', () => {
-  // provide our implementations or mocks to the dependency injector
   beforeEach(() => TestBed.configureTestingModule({
     providers: [
       AppState,
       AppComponent
-    ]}));
-
-  it('should have a url', inject([ AppComponent ], (app: AppComponent) => {
-    expect(app.url).toEqual('https://twitter.com/AngularClass');
+    ]
   }));
 
+  it('should have a message', inject([AppComponent], (app: AppComponent) => {
+    expect(app.message).toEqual('Hello World!');
+  }));
 });

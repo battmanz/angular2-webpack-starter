@@ -19,9 +19,9 @@ export const routes = [
   imports: [
     CommonModule,
     FormsModule,
-    RouterModule.forChild(routes),
+    RouterModule.forChild(routes)
   ]
 })
 export default class AboutModule {
-  static routes = routes;
+  public static routes = routes;
 }

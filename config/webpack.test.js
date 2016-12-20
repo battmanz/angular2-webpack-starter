@@ -96,6 +96,7 @@ module.exports = function (options) {
             // use inline sourcemaps for "karma-remap-coverage" reporter
             sourceMap: false,
             inlineSourceMap: true,
+            // useBabel: true,
             compilerOptions: {
 
               // Remove TypeScript helpers to be injected
@@ -104,7 +105,7 @@ module.exports = function (options) {
 
             }
           },
-          exclude: [/\.e2e\.ts$/]
+          exclude: [/\.e2e-spec\.ts$/]
         },
 
         /**
@@ -119,14 +120,14 @@ module.exports = function (options) {
         },
 
         /**
-         * Raw loader support for *.css files
+         * Raw loader support for *.scss files
          * Returns file content as string
          *
          * See: https://github.com/webpack/raw-loader
          */
         {
-          test: /\.css$/,
-          loader: ['to-string-loader', 'css-loader'],
+          test: /\.scss$/,
+          loader: ['to-string-loader', 'css-loader', 'sass-loader'],
           exclude: [helpers.root('src/index.html')]
         },
 
@@ -154,7 +155,7 @@ module.exports = function (options) {
           loader: 'istanbul-instrumenter-loader',
           include: helpers.root('src'),
           exclude: [
-            /\.(e2e|spec)\.ts$/,
+            /\.(e2e-spec|spec)\.ts$/,
             /node_modules/
           ]
         }
